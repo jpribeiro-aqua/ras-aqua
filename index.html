@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Fish</title>
+<meta http-equiv="refresh" content="2; url=https://jpribeiro-aqua.github.io/green-fish/">
+<style>body{font-family:system-ui,sans-serif;background:#eef3f2;color:#122422;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}a{color:#0f7a6c;font-weight:600}</style>
+</head>
+<body>
+<main><h1 style="color:#0f7a6c">Green Fish</h1><p>O app mudou de endereço. Abrindo o novo…</p><p><a id="ir" href="https://jpribeiro-aqua.github.io/green-fish/">https://jpribeiro-aqua.github.io/green-fish/</a></p><p style="font-size:14px;color:#5a6e6b">Se você tinha o app instalado no celular, remova o ícone antigo e instale de novo pelo endereço novo.</p></main>
+<script>
+/* leva junto o código de equipe (?equipe=...) e tira o app antigo do cache */
+var novo="https://jpribeiro-aqua.github.io/green-fish/"+location.search+location.hash;
+document.getElementById("ir").href=novo;
+function ir(){location.replace(novo)}
+try{if(navigator.serviceWorker){navigator.serviceWorker.getRegistrations().then(function(rs){return Promise.all(rs.map(function(r){return r.unregister()}))}).then(ir,ir)}else ir()}catch(e){ir()}
+</script>
+</body>
+</html>
